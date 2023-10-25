@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wise_care/loginPage.dart';
+
+import 'introScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
-        home: const LoginScreen());
+        // home: const LoginScreen());
+        home: const IntroScreen());
   }
 }
