@@ -100,84 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                     ),
 
-                    //text button
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                      const SizedBox(
-                        height: 75,
-                      ),
-                      // Container(
-                      //     width: 250,
-                      //     height: 250,
-                      //     decoration: const BoxDecoration(
-                      //         image: DecorationImage(
-                      //             image: AssetImage('assets/login image.png')),
-                      //         borderRadius: BorderRadius.all(Radius.circular(30)))),
-                      const SizedBox(
-                        height: 60,
-                      ),
-                      //Email id textfield
-                      SizedBox(
-                          width: 320,
-                          child: custom.textbox(
-                              controller: _emailcontroller,
-                              obscure: false,
-                              text: 'Email id',
-                              icon: const Icon(Icons.mail))),
-                      const SizedBox(
-                        height: 20,
-                      ),
-
-                      //password textfield
-                      SizedBox(
-                          width: 320,
-                          child: custom.textbox(
-                              controller: _passwordcontroller,
-                              obscure: true,
-                              text: 'Password',
-                              icon: const Icon(Icons.lock_clock_rounded))),
-                      const SizedBox(
-                        height: 40,
-                      ),
-
-                      //login button
-                      SizedBox(
-                        width: 250,
-                        child: custom.button(
-                            text: 'Login',
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const HomeScreen()),
-                              );
-                            }),
-                      ),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      const Text(
-                        '------------------------------or------------------------------',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      SignInButton(
-                        Buttons.google,
-                        onPressed: () {
-                          // _showButtonPressDialog(context, 'Google');
-                        },
-                      ),
-                      Container(
-                        color: Colors.blue,
-                        height: 20,
-                        width: 20,
-                      ),
-
+                
                       //text button
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -202,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ],
                       ),
                     ]),
-                  ])),
-            )));
+                  )),
+            ));
   }
 }

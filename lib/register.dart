@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in_button/sign_in_button.dart';
+import 'package:wise_care/firebase_Auth.dart';
 import 'package:wise_care/homeScreen.dart';
 import 'package:wise_care/loginPage.dart';
 import 'package:wise_care/widgets.dart';
@@ -13,10 +14,10 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   CustomWidgets custom = CustomWidgets();
-  final _emailcontroller =  TextEditingController();
-  final _password1controller =  TextEditingController();
-  final _password2controller =  TextEditingController();
-  final _mobilenocontroller =  TextEditingController();
+  final _emailcontroller = TextEditingController();
+  final _password1controller = TextEditingController();
+  final _password2controller = TextEditingController();
+  final _mobilenocontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -74,8 +75,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
             //submit button
             SizedBox(
               width: 250,
-              child: custom.button(text: 'Submit', onPressed: (){ Navigator.push(
-        context, MaterialPageRoute(builder: (ctx) => const HomeScreen()));}),
+              child: custom.button(
+                  text: 'Submit',
+                  onPressed: () async {
+                    String res = await AuthServices.signup(
+                        email: _emailcontroller.text.trim(), password: _password1controller.text.trim());
+                    if (res != "success") {
+                      print(res);
+                      return;
+                    }
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (ctx) => const HomeScreen()));
+                  }),
             ),
 
             const Text(

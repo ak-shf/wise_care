@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:wise_care/model.dart' as model;
 
 class AuthServices {
   static final _firebaseAuth = FirebaseAuth.instance;
@@ -11,13 +12,15 @@ class AuthServices {
     try {
       UserCredential cred = await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
-      // model.User user = model.User(
-      //   email: email,
-      //   password: password,
-      //   uid: cred.user?.uid,
-      // );
-      
-    } catch (e) {}
+      model.User user = model.User(
+        email: email,
+        password: password,
+        uid: cred.user?.uid,
+      );
+      res='success';
+    } catch (e) {
+      res=e.toString();
+    }
     return res;
   }
 }
