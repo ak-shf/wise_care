@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomWidgets {
 //button widget
-  Widget button(String text, Function onPressed) {
+  Widget button({required Function onPressed,required String text}) {
     return ElevatedButton(
       onPressed: () {
         onPressed();
@@ -21,7 +21,7 @@ class CustomWidgets {
   }
 
 //Textformfield widget
-  Widget textbox({required String text, Icon? icon, required bool obscure}) {
+  Widget textbox({required String text, Icon? icon, required bool obscure,required TextEditingController controller}) {
     return TextFormField(
         style: const TextStyle(color: Colors.white),
         obscureText: obscure,
@@ -46,6 +46,8 @@ class CustomWidgets {
             hintStyle: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w400,
-                fontStyle: FontStyle.italic)));
+                fontStyle: FontStyle.italic)),
+                );
   }
+  
 }

@@ -49,7 +49,7 @@ class IntroScreen extends StatelessWidget {
             ),
 
             //Get started Button
-            custom.button('Get started', () {
+            custom.button(text: 'Get started', onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const LoginScreen()),

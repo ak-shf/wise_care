@@ -13,6 +13,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   CustomWidgets custom = CustomWidgets();
+  final _emailcontroller=new TextEditingController();
+  final _passwordcontroller=new TextEditingController();
   @override
   Widget build(BuildContext context) {
     // double width = MediaQuery.of(context).size.width;
@@ -43,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
               //Email id textfield
               SizedBox(
                   width: 320,
-                  child: custom.textbox(obscure: false,
+                  child: custom.textbox(obscure: false,controller: _emailcontroller,
                       text: 'Email id', icon: const Icon(Icons.mail))),
               const SizedBox(
                 height: 20,
@@ -53,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                   width: 320,
 
-                  child: custom.textbox(obscure: true,
+                  child: custom.textbox(obscure: true,controller: _passwordcontroller,
                       text: 'Password', icon: const Icon(Icons.lock_clock_rounded))),
               const SizedBox(
                 height: 40,),
@@ -61,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
               //login button
               SizedBox(
                 width: 250,
-                child: custom.button('Login', () {
+                child: custom.button(text: 'Login', onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const HomeScreen()),
@@ -84,7 +86,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   // _showButtonPressDialog(context, 'Google');
                 },
               ),
-               Container(color: Colors.blue,height: 20,width: 20,),
 
               //text button
               Row(
