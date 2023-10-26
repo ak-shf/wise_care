@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wise_care/loginPage.dart';
 import 'package:wise_care/widgets.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -14,6 +15,8 @@ class IntroScreen extends StatelessWidget {
             child: Column(
           children: [
             const SizedBox(height: 200),
+
+            //Display png file in the middle of the screen
             Container(
               alignment: const Alignment(0.4, 0),
               child: const Image(
@@ -23,6 +26,8 @@ class IntroScreen extends StatelessWidget {
             const SizedBox(
               height: 75,
             ),
+
+            //Heading and description
             const Text(
               'Wise Care',
               style: TextStyle(
@@ -42,18 +47,14 @@ class IntroScreen extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(350, 50),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15)),
-                  backgroundColor: const Color.fromARGB(255, 29, 148, 245)),
-              child: const Text(
-                'Get started',
-                style: TextStyle(fontSize: 17,color: Colors.black,fontWeight: FontWeight.bold),
-              ),
-            )
+
+            //Get started Button
+            custom.button('Get started', () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginScreen()),
+              );
+            })
           ],
         )),
       ),
