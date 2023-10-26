@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sign_in_button/sign_in_button.dart';
 import 'package:wise_care/homeScreen.dart';
 import 'package:wise_care/register.dart';
 import 'package:wise_care/widgets.dart';
@@ -11,7 +12,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  CustomWidgets custom = new CustomWidgets();
+  CustomWidgets custom = CustomWidgets();
   @override
   Widget build(BuildContext context) {
     // double width = MediaQuery.of(context).size.width;
@@ -52,13 +53,15 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                   width: 320,
                   child: custom.textbox(
-                      text: 'Password', icon: const Icon(Icons.lock_clock_rounded))),
+                      text: 'Password',
+                      icon: const Icon(Icons.lock_clock_rounded))),
               const SizedBox(
                 height: 40,
               ),
 
               //login button
-              SizedBox(width: 250,
+              SizedBox(
+                width: 250,
                 child: custom.button('Login', () {
                   Navigator.push(
                     context,
@@ -68,6 +71,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(
                 height: 40,
+              ),
+              SignInButton(
+                Buttons.googleDark,
+                onPressed: () {
+                  // _showButtonPressDialog(context, 'Google');
+                },
               ),
 
               //text button
