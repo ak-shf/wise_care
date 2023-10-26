@@ -52,17 +52,11 @@ class _LoginScreenState extends State<LoginScreen> {
               //password textfield
               SizedBox(
                   width: 320,
-<<<<<<< HEAD
+
                   child: custom.textbox(obscure: true,
                       text: 'Password', icon: const Icon(Icons.lock_clock_rounded))),
-=======
-                  child: custom.textbox(
-                      text: 'Password',
-                      icon: const Icon(Icons.lock_clock_rounded))),
->>>>>>> 6e0022dcc1adfae6accea69349397674dcf3b1a1
               const SizedBox(
-                height: 40,
-              ),
+                height: 40,),
 
               //login button
               SizedBox(
@@ -79,13 +73,13 @@ class _LoginScreenState extends State<LoginScreen> {
               '------------------------------or------------------------------',
               style: TextStyle(color: Colors.white),
             ),
-            const SizedBox(height: 40,),
-            const Text('Google Sign in', style: TextStyle(color: Colors.white)),
+            const SizedBox(height: 20,),
+            
               const SizedBox(
                 height: 40,
               ),
               SignInButton(
-                Buttons.googleDark,
+                Buttons.google,
                 onPressed: () {
                   // _showButtonPressDialog(context, 'Google');
                 },
@@ -113,10 +107,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       ))
                 ],
               ),
-            ],
+            ]  
           ),
         )),
-      ),
-    );
+      )
+);
   }
 }
