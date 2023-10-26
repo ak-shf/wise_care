@@ -22,20 +22,28 @@ class CustomWidgets {
   }
 
 //Textformfield widget
-Widget textbox(String text)
+Widget textbox({required String text,Icon? icon})
 {
-  return TextFormField(cursorColor: Colors.black,
-                    decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.mail),
+  return TextFormField( style: const TextStyle(color: Colors.white),
+                    cursorColor: Colors.white,
+                    decoration:  InputDecoration(
+                        prefixIcon: icon,
                         prefixIconColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                        ),
-                        filled: true,
-                        fillColor: Colors.grey,
-                        hintText: "Email Id",
-                        hintStyle: TextStyle(
-                          fontWeight: FontWeight.w500,
+                        border: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            borderSide:
+                                BorderSide(color: Colors.white, width: 2)),
+                        focusedBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.all(Radius.circular(20))),
+                        enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.all(Radius.circular(20))),
+                        hintText: text,
+                        hintStyle: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.italic
                         )));
 }
 }
