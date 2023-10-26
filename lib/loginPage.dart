@@ -78,6 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   // _showButtonPressDialog(context, 'Google');
                 },
               ),
+               Container(color: Colors.blue,height: 20,width: 20,),
 
               //text button
               Row(
