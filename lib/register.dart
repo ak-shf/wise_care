@@ -28,21 +28,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
             SizedBox(
                 width: 320,
                 child: custom.textbox(
-                    text: 'Email Id', icon: const Icon(Icons.mail))),
+                    text: 'Email Id', icon: const Icon(Icons.mail),obscure: false)),
             SizedBox(
               width: 320,
               child: custom.textbox(
-                  text: 'Password', icon: const Icon(Icons.lock_clock_rounded)),
+                  text: 'Password', icon: const Icon(Icons.lock_clock_rounded),obscure: true),
             ),
             SizedBox(
               width: 320,
-              child: custom.textbox(
+              child: custom.textbox(obscure: true,
                   text: 'Confirm Password',
                   icon: const Icon(Icons.lock_clock_rounded)),
             ),
             SizedBox(
               width: 320,
-              child: custom.textbox(
+              child: custom.textbox(obscure: false,
                   text: 'Mobile No',
                   icon: const Icon(Icons.phone_android_rounded)),
             ),
