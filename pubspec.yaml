@@ -62,6 +62,7 @@ flutter:
   assets:
     - assets\Screenshot 2023-10-25 212328.png
     - assets\Clipped_image_20231026_112057.png
+    - assets\login image.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
