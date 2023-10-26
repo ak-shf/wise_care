@@ -30,20 +30,20 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(
                 height: 75,
               ),
-              Container(
-                  width: 250,
-                  height: 250,
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage('assets/login image.png')),
-                      borderRadius: BorderRadius.all(Radius.circular(30)))),
+              // Container(
+              //     width: 250,
+              //     height: 250,
+              //     decoration: const BoxDecoration(
+              //         image: DecorationImage(
+              //             image: AssetImage('assets/login image.png')),
+              //         borderRadius: BorderRadius.all(Radius.circular(30)))),
               const SizedBox(
                 height: 60,
               ),
               //Email id textfield
               SizedBox(
                   width: 320,
-                  child: custom.textbox(
+                  child: custom.textbox(obscure: false,
                       text: 'Email id', icon: const Icon(Icons.mail))),
               const SizedBox(
                 height: 20,
@@ -52,12 +52,11 @@ class _LoginScreenState extends State<LoginScreen> {
               //password textfield
               SizedBox(
                   width: 320,
-                  child: custom.textbox(
-                      text: 'Password',
-                      icon: const Icon(Icons.lock_clock_rounded))),
+
+                  child: custom.textbox(obscure: true,
+                      text: 'Password', icon: const Icon(Icons.lock_clock_rounded))),
               const SizedBox(
-                height: 40,
-              ),
+                height: 40,),
 
               //login button
               SizedBox(
@@ -69,11 +68,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   );
                 }),
               ),
+              const SizedBox(height: 40,),
+               const Text(
+              '------------------------------or------------------------------',
+              style: TextStyle(color: Colors.white),
+            ),
+            const SizedBox(height: 20,),
+            
               const SizedBox(
                 height: 40,
               ),
               SignInButton(
-                Buttons.googleDark,
+                Buttons.google,
                 onPressed: () {
                   // _showButtonPressDialog(context, 'Google');
                 },
@@ -102,10 +108,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       ))
                 ],
               ),
-            ],
+            ]  
           ),
         )),
-      ),
-    );
+      )
+);
   }
 }
