@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "813487955327",
+    "project_id": "wise-care-d1142",
+    "storage_bucket": "wise-care-d1142.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813487955327:android:89f9986456891043db4e4a",
+        "android_client_info": {
+          "package_name": "com.example.wise_care"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyrzL_5Ar0Rq3BTEi82MzhVGj7K1SdQ6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
