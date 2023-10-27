@@ -17,10 +17,24 @@ class AuthServices {
         password: password,
         uid: cred.user?.uid,
       );
-      res='success';
+      res = 'success';
     } catch (e) {
-      res=e.toString();
+      res = e.toString();
     }
     return res;
   }
+
+  static Future<String> login(
+      {required String email, required String password}) async {
+        String res='Something went wrong';
+        try {
+      // ignore: no_leading_underscores_for_local_identifiers, unused_local_variable
+      UserCredential _cred = await _firebaseAuth.signInWithEmailAndPassword(
+          email: email, password: password);
+          res='success';
+    } catch (e) {
+      res = e.toString();
+    }
+    return res;
+      }
 }
