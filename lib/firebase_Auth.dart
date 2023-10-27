@@ -12,11 +12,11 @@ class AuthServices {
     try {
       UserCredential cred = await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
-      // model.User user = model.User(
-      //   email: email,
-      //   password: password,
-      //   uid: cred.user?.uid,
-      // );
+      model.User user = model.User(
+        email: email,
+        password: password,
+        uid: cred.user?.uid,
+      );
       res='success';
     } catch (e) {
       res=e.toString();

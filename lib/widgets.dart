@@ -23,6 +23,7 @@ class CustomWidgets {
 //Textformfield widget
   Widget textbox({required String text, Icon? icon, required bool obscure,required TextEditingController controller}) {
     return TextFormField(
+      controller: controller,
         style: const TextStyle(color: Colors.white),
         obscureText: obscure,
         cursorColor: Colors.white,
