@@ -74,7 +74,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
             //submit button
             SizedBox(
-              width: 250,
+              width: 200,
               child: custom.button(
                   text: 'Submit',
                   onPressed: () {
