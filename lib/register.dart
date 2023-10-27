@@ -19,6 +19,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _password2controller = TextEditingController();
   final _mobilenocontroller = TextEditingController();
 
+  void _signup()
+  async{
+    String email=_emailcontroller.text.trim();
+                      String password=_password1controller.text.trim();
+                      print('hig');
+                     String res=await AuthServices.signup(
+
+                          email: email,
+                          password: password);
+                      if (res != "success") {
+                         print('wrong');
+                        print(res);
+                        return;
+                      }
+                      print('hello');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => const HomeScreen()));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,23 +94,44 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
             //submit button
             SizedBox(
-              width: 200,
-              child: custom.button(
-                  text: 'Submit',
+                width: 200,
+                child: ElevatedButton(
                   onPressed: () {
-                    AuthServices.signup(
-                        email: _emailcontroller.text.trim(),
-                        password: _password1controller.text.trim());
-                    // if (res != "success") {
-                    //   print(res);
-                    //   return;
-                    // }
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (ctx) => const HomeScreen()));
-                  }),
-            ),
+                      _signup();
+                  
+                  },
+                  style: ElevatedButton.styleFrom(
+                      fixedSize: const Size(350, 50),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      backgroundColor: const Color.fromARGB(255, 29, 148, 245)),
+                  child: const Text(
+                    'Submit',
+                    style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
+                )
+                // custom.button(
+                //     text: 'Submit',
+                //     onPressed: () async{
+                //       String email=_emailcontroller.text.trim();
+                //       String password=_password1controller.text.trim();
+                //      String res=await AuthServices.signup(
+
+                //           email: email,
+                //           password: password);
+                //       if (res != "success") {
+                //         print(res);
+                //         return;
+                //       }
+                //       Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //               builder: (ctx) => const HomeScreen()));
+                //     }),
+                ),
 
             const Text(
               '------------------------------or------------------------------',
