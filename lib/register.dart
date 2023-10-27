@@ -77,13 +77,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
               width: 250,
               child: custom.button(
                   text: 'Submit',
-                  onPressed: () async {
-                    String res = await AuthServices.signup(
-                        email: _emailcontroller.text.trim(), password: _password1controller.text.trim());
-                    if (res != "success") {
-                      print(res);
-                      return;
-                    }
+                  onPressed: () {
+                    AuthServices.signup(
+                        email: _emailcontroller.text.trim(),
+                        password: _password1controller.text.trim());
+                    // if (res != "success") {
+                    //   print(res);
+                    //   return;
+                    // }
                     Navigator.push(
                         context,
                         MaterialPageRoute(
